@@ -82,6 +82,30 @@
       background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
     }
 
+    .toolbar-action:disabled {
+      cursor: wait;
+      opacity: .68;
+    }
+
+    .save-status {
+      position: fixed;
+      z-index: 120;
+      left: 50%;
+      bottom: max(20px, env(safe-area-inset-bottom));
+      transform: translateX(-50%);
+      max-width: calc(100% - 34px);
+      padding: 10px 15px;
+      border-radius: 999px;
+      color: #ffffff;
+      background: rgba(4, 31, 67, .97);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .34);
+      text-align: center;
+      font-size: .82rem;
+      white-space: nowrap;
+    }
+
+    .save-status[hidden] { display: none !important; }
+
     .toolbar-action:focus-visible,
     .pdf-close:focus-visible,
     .pdf-file-link:focus-visible {
@@ -515,9 +539,9 @@
       <span aria-hidden="true">←</span>
       <span>Digital Card</span>
     </a>
-    <button class="toolbar-action toolbar-action--primary" id="openOriginalPdf" type="button" aria-haspopup="dialog" aria-controls="originalPdfModal">
-      <span>Original <span class="optional">PDF</span></span>
-      <span aria-hidden="true">↗</span>
+    <button class="toolbar-action toolbar-action--primary" id="savePdfButton" type="button" disabled aria-busy="true">
+      <span>Save PDF</span>
+      <span aria-hidden="true">↓</span>
     </button>
   </nav>
 
@@ -605,66 +629,125 @@
     </footer>
   </main>
 
-  <div class="pdf-modal" id="originalPdfModal" role="dialog" aria-modal="true" aria-labelledby="originalPdfTitle" hidden>
-    <header class="pdf-modal-toolbar">
-      <button class="pdf-close" id="closeOriginalPdf" type="button">
-        <span aria-hidden="true">←</span>
-        <span>One-Pager</span>
-      </button>
-      <h2 class="pdf-modal-title" id="originalPdfTitle">Original PDF</h2>
-      <a class="pdf-file-link" href="./ZigZagUp_OnePager.pdf" target="_blank" rel="noopener noreferrer external" download>
-        <span>Open / Save</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-    </header>
-    <div class="pdf-preview">
-      <img src="./ZigZagUp_OnePager-preview.png" width="1700" height="2200" alt="Preview of the original ZigZagUp one-pager PDF">
-    </div>
-  </div>
+
+  <div class="save-status" id="saveStatus" role="status" aria-live="polite" hidden></div>
 
   <script>
     (() => {
       'use strict';
 
-      const modal = document.getElementById('originalPdfModal');
-      const openButton = document.getElementById('openOriginalPdf');
-      const closeButton = document.getElementById('closeOriginalPdf');
-      let previousFocus = null;
+      const saveButton = document.getElementById('savePdfButton');
+      const saveStatus = document.getElementById('saveStatus');
+      const pdfUrl = './ZigZagUp_OnePager.pdf';
 
-      function openModal(updateHash = true) {
-        if (!modal) return;
-        previousFocus = document.activeElement;
-        modal.hidden = false;
-        document.body.classList.add('modal-open');
-        if (updateHash && location.hash !== '#original-pdf') {
-          history.pushState({ originalPdf: true }, '', '#original-pdf');
-        }
-        requestAnimationFrame(() => closeButton?.focus());
+      let preparedFile = null;
+      let preparationPromise = null;
+      let statusTimer = null;
+
+      function showStatus(message) {
+        if (!saveStatus) return;
+        saveStatus.textContent = message;
+        saveStatus.hidden = false;
+        clearTimeout(statusTimer);
+        statusTimer = setTimeout(() => {
+          saveStatus.hidden = true;
+        }, 3300);
       }
 
-      function closeModal(updateHistory = true) {
-        if (!modal || modal.hidden) return;
-        modal.hidden = true;
-        document.body.classList.remove('modal-open');
-        if (updateHistory && location.hash === '#original-pdf') {
-          history.back();
+      function supportsFileShare(file) {
+        if (!navigator.share) return false;
+        if (!navigator.canShare) return true;
+        try {
+          return navigator.canShare({ files: [file] });
+        } catch (_) {
+          return false;
         }
-        if (previousFocus instanceof HTMLElement) previousFocus.focus();
       }
 
-      openButton?.addEventListener('click', () => openModal(true));
-      closeButton?.addEventListener('click', () => closeModal(true));
+      function preparePdf() {
+        if (preparedFile) return Promise.resolve(preparedFile);
+        if (preparationPromise) return preparationPromise;
 
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') closeModal(true);
+        saveButton.disabled = true;
+        saveButton.setAttribute('aria-busy', 'true');
+
+        preparationPromise = fetch(pdfUrl, { cache: 'no-store' })
+          .then(response => {
+            if (!response.ok) throw new Error('PDF unavailable');
+            return response.blob();
+          })
+          .then(blob => {
+            preparedFile = new File(
+              [blob],
+              'ZigZagUp_OnePager.pdf',
+              { type: 'application/pdf' }
+            );
+            saveButton.disabled = false;
+            saveButton.setAttribute('aria-busy', 'false');
+            return preparedFile;
+          })
+          .catch(error => {
+            preparationPromise = null;
+            saveButton.disabled = false;
+            saveButton.setAttribute('aria-busy', 'false');
+            showStatus('The PDF could not be prepared. Please try again.');
+            throw error;
+          });
+
+        return preparationPromise;
+      }
+
+      saveButton?.addEventListener('click', () => {
+        if (!preparedFile) {
+          showStatus('Please wait while the PDF is prepared.');
+          preparePdf().catch(() => {});
+          return;
+        }
+
+        if (supportsFileShare(preparedFile)) {
+          /*
+           * On iPhone this keeps the user on the one-pager and opens the native
+           * share sheet. Select “Save to Files” to save the PDF.
+           */
+          navigator.share({
+            title: 'ZigZagUp One-Pager',
+            files: [preparedFile]
+          }).catch(error => {
+            if (error?.name !== 'AbortError') {
+              showStatus('Choose “Save to Files” in the share sheet.');
+            }
+          });
+          return;
+        }
+
+        const isIOS =
+          /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        /*
+         * Never open the raw PDF as an iPhone fallback. That was the path that
+         * could leave the installed Home Screen app trapped on the PDF page.
+         */
+        if (isIOS) {
+          showStatus('Open the card in Safari, tap Save PDF, then choose “Save to Files.”');
+          return;
+        }
+
+        // Desktop fallback: download the already-prepared PDF file.
+        const objectUrl = URL.createObjectURL(preparedFile);
+        const download = document.createElement('a');
+        download.href = objectUrl;
+        download.download = preparedFile.name;
+        download.hidden = true;
+        document.body.appendChild(download);
+        download.click();
+        download.remove();
+        setTimeout(() => URL.revokeObjectURL(objectUrl), 1600);
+        showStatus('PDF downloaded.');
       });
 
-      window.addEventListener('popstate', () => {
-        if (location.hash === '#original-pdf') openModal(false);
-        else closeModal(false);
-      });
-
-      if (location.hash === '#original-pdf') openModal(false);
+      // Preload the file so the native share sheet can be opened from a direct tap.
+      preparePdf().catch(() => {});
     })();
   </script>
 </body>

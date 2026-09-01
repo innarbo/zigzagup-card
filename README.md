@@ -110,3 +110,11 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Keeps the period after **answers.** cyan.
 - Centers “Let's make judgment measurable.”
 - The **Original PDF** button opens a closable in-page preview of the exact user-supplied PDF. The optional **Open / Save** action opens the original file separately, so the Home Screen web app is not trapped on a raw PDF screen.
+
+## Version 18 — direct Save PDF
+
+- Replaced **Original PDF** with **Save PDF** in the mobile one-pager toolbar.
+- Removed the separate original-PDF preview screen and the redundant **Open / Save** control.
+- On iPhone, **Save PDF** opens the native share sheet without navigating away; choose **Save to Files**.
+- On desktop, **Save PDF** downloads the original PDF directly.
+- The original PDF remains unchanged.
