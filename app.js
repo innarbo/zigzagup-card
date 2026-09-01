@@ -1,3 +1,4 @@
+// Version 14 icon spacing + vCard photo.
 // Version 13 Home Screen owner-mode and external-link fix.
 // Version 11 supporting-text CSS fix.
 // Version 10 supporting text line-break refinement.

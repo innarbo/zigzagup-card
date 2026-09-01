@@ -22,3 +22,5 @@ the larger U icon and the corrected launch behavior:
 
 The public card URL and QR code remain unchanged:
 https://innarbo.github.io/zigzagup-card/
+
+If the old Home Screen icon art remains, delete the ZigZagUp icon from the Home Screen and add it again after uploading this version.

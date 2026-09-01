@@ -91,3 +91,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Added return/resume handling so the app does not remain on a blank external/intermediate page.
 - Replaced startup screens with a dark branded launch treatment.
 - Existing Home Screen installations must be removed and added again to receive the new icon.
+
+- Version 14: slightly reduced the Home Screen icon mark size to create cleaner top/bottom padding, and embedded a professional contact photo in `inna-arbo.vcf` so the image appears when the contact is saved.
