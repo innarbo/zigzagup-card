@@ -101,3 +101,12 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Includes the user's original `ZigZagUp_OnePager.pdf` byte-for-byte, without redesign, reformatting, cropping, or content changes.
 - The card's One-Pager button opens the hosted original PDF directly.
 - The stable `/one-pager/` URL stored in the vCard redirects to the same original PDF.
+
+
+## Version 17 - refined mobile one-pager
+
+- Restores the responsive Version 15 one-pager direction while removing decorative triangles and the hero illustration.
+- Replaces the hero copy with: “ZigZagUp makes reasoning visible—turning hidden thinking patterns into targeted repair, measurable growth, and stronger judgment.”
+- Keeps the period after **answers.** cyan.
+- Centers “Let's make judgment measurable.”
+- The **Original PDF** button opens a closable in-page preview of the exact user-supplied PDF. The optional **Open / Save** action opens the original file separately, so the Home Screen web app is not trapped on a raw PDF screen.
