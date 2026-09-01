@@ -131,8 +131,24 @@
     }
 
     .brand {
+      display: block;
       width: min(100%, 286px);
-      margin: 0 0 29px;
+      margin: 0 auto 20px;
+    }
+
+    .brand-divider {
+      width: min(100%, 420px);
+      height: 1px;
+      margin: 0 auto 28px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 216, 235, 0),
+        rgba(0, 216, 235, .32) 18%,
+        rgba(0, 216, 235, .72) 50%,
+        rgba(0, 216, 235, .32) 82%,
+        rgba(0, 216, 235, 0)
+      );
     }
 
     .eyebrow {
@@ -423,7 +439,12 @@
 
       .brand {
         width: 218px;
-        margin-bottom: 26px;
+        margin: 0 auto 18px;
+      }
+
+      .brand-divider {
+        width: min(78%, 330px);
+        margin-bottom: 24px;
       }
 
       h1 {
@@ -548,6 +569,7 @@
   <main class="sheet">
     <section class="hero">
       <img class="brand" src="../assets/brand/zigzagup-logo-tagline-dark.png" alt="ZigZagUp - Reasoning Calibration and Training">
+      <div class="brand-divider" aria-hidden="true"></div>
       <p class="eyebrow">Beyond IQ</p>
       <h1>
         <span class="title-line">Building <span class="accent">judgment</span></span>

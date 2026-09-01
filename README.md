@@ -132,3 +132,9 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Corrected the intended screen: the ZigZagUp wordmark on the white mobile contact card is now explicitly centered.
 - Added a more visible but still restrained cyan separator directly beneath that logo.
 - Preserved the Version 19 uniform dark QR-card background and all other content and functionality.
+
+## Version 21
+
+- Correctly centers the ZigZagUp logo on the responsive/mobile one-pager.
+- Adds the visible but restrained cyan separator directly below the logo.
+- Does not change the white contact card, uniform dark QR background, Save PDF behavior, vCard, or Home Screen icon.
