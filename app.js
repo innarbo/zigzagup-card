@@ -1,3 +1,4 @@
+// Version 20 white-card logo centering and separator refinement.
 // Version 19 centered one-pager brand header + uniform QR-card navy.
 // Version 18 direct Save PDF flow.
 // Version 17 mobile one-pager + safe original PDF viewer.

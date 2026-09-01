@@ -168,18 +168,26 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
 }
 .profile-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 .brand-lockup {
-  display: grid;
-  justify-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 18px;
 }
 .brand-separator {
-  width: 74px;
-  height: 1px;
+  width: 112px;
+  height: 2px;
+  margin: 0 auto;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(4, 19, 38, 0), rgba(4, 19, 38, .12) 22%, rgba(0, 216, 235, .55) 50%, rgba(4, 19, 38, .12) 78%, rgba(4, 19, 38, 0));
+  background: linear-gradient(90deg, rgba(0, 216, 235, 0), rgba(0, 216, 235, .42) 20%, rgba(0, 216, 235, .88) 50%, rgba(0, 216, 235, .42) 80%, rgba(0, 216, 235, 0));
 }
 .identity-block {
   margin-top: 24px;
@@ -428,7 +436,23 @@ body.modal-open { overflow: hidden; }
     border-radius: 0;
     box-shadow: none;
   }
-  .logo--light { width: min(100%, 196px); }
+  .profile-header,
+  .brand-lockup {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo--light {
+    display: block;
+    width: 196px;
+    max-width: calc(100vw - 48px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .brand-separator {
+    width: 108px;
+    height: 2px;
+  }
   .profile-header h1 { font-size: clamp(2.35rem, 10vw, 2.9rem); }
   .role { font-size: .98rem; }
   .positioning { margin: 30px 0 26px; padding-top: 23px; }

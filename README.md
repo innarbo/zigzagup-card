@@ -126,3 +126,9 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Left all one-pager content below the separator unchanged.
 - Changed the dark QR-card background to a uniform `#031a38`, matching the previous darkest/lower portion.
 - Removed the upper cyan glow so the QR card no longer becomes lighter toward the top.
+
+## Version 20
+
+- Corrected the intended screen: the ZigZagUp wordmark on the white mobile contact card is now explicitly centered.
+- Added a more visible but still restrained cyan separator directly beneath that logo.
+- Preserved the Version 19 uniform dark QR-card background and all other content and functionality.
