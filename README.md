@@ -118,3 +118,11 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - On iPhone, **Save PDF** opens the native share sheet without navigating away; choose **Save to Files**.
 - On desktop, **Save PDF** downloads the original PDF directly.
 - The original PDF remains unchanged.
+
+## Version 19
+
+- Centered the ZigZagUp logo at the top of the responsive/mobile one-pager.
+- Added a subtle cyan separator beneath the centered logo.
+- Left all one-pager content below the separator unchanged.
+- Changed the dark QR-card background to a uniform `#031a38`, matching the previous darkest/lower portion.
+- Removed the upper cyan glow so the QR card no longer becomes lighter toward the top.

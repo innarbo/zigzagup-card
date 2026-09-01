@@ -71,9 +71,7 @@ img { display: block; max-width: 100%; }
   min-height: 760px;
   padding: 55px 50px 42px;
   color: #f8f9fb;
-  background:
-    radial-gradient(circle at 52% 24%, rgba(0, 232, 247, .06), transparent 17rem),
-    linear-gradient(180deg, #062b59 0%, #041f43 52%, #031a38 100%);
+  background: #031a38;
   border: 1px solid rgba(255, 255, 255, .08);
   display: flex;
   flex-direction: column;
@@ -94,16 +92,7 @@ img { display: block; max-width: 100%; }
 }
 
 .brand-glow {
-  position: absolute;
-  z-index: -1;
-  top: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
-  height: 240px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 232, 247, .14) 0%, rgba(0, 216, 235, .08) 38%, rgba(0, 216, 235, 0) 72%);
-  filter: blur(38px);
+  display: none;
 }
 
 .qr-panel::after {
