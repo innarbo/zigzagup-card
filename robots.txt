@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://innarbo.github.io/zigzagup-card/sitemap.xml

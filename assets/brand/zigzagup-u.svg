@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 300" role="img" aria-labelledby="title">
+  <title id="title">ZigZagUp U mark</title>
+  <defs>
+    <linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00EAF8"/>
+      <stop offset="1" stop-color="#00C5E2"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#cyan)" d="M90 2 35 70h110L90 2Z"/>
+  <path fill="url(#cyan)" d="M20 102h36v101c0 29 14 44 34 44s34-15 34-44V102h36v103c0 53-29 83-70 83s-70-30-70-83V102Z"/>
+</svg>

@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//ZigZagUp//Digital Business Card//EN
+N:Arbo;Inna;;;
+FN:Inna Arbo
+ORG:ZigZagUp
+TITLE:Founder & CEO
+EMAIL;TYPE=INTERNET,WORK:zigzagup.app@gmail.com
+item1.URL:https://innarbo.github.io/zigzagup-card/
+item1.X-ABLabel:Digital Card
+item2.URL:https://innarbo.github.io/zigzagup-card/linkedin/
+item2.X-ABLabel:LinkedIn
+item3.URL:https://innarbo.github.io/zigzagup-card/one-pager/
+item3.X-ABLabel:One-Pager
+NOTE:ZigZagUp — Reasoning Calibration & Training
+REV:20260901T000000Z
+END:VCARD

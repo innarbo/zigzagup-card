@@ -1,0 +1,69 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "REPLACE_WITH_PASS_TYPE_IDENTIFIER",
+  "serialNumber": "inna-arbo-zigzagup-card-v1",
+  "teamIdentifier": "REPLACE_WITH_APPLE_TEAM_IDENTIFIER",
+  "organizationName": "ZigZagUp",
+  "description": "Inna Arbo — ZigZagUp Digital Business Card",
+  "logoText": "ZigZagUp",
+  "foregroundColor": "rgb(248, 249, 251)",
+  "backgroundColor": "rgb(4, 19, 38)",
+  "labelColor": "rgb(0, 216, 235)",
+  "generic": {
+    "primaryFields": [
+      {
+        "key": "name",
+        "label": "FOUNDER & CEO",
+        "value": "Inna Arbo"
+      }
+    ],
+    "secondaryFields": [
+      {
+        "key": "company",
+        "label": "COMPANY",
+        "value": "ZigZagUp"
+      }
+    ],
+    "auxiliaryFields": [
+      {
+        "key": "focus",
+        "label": "FOCUS",
+        "value": "Reasoning Calibration & Training"
+      }
+    ],
+    "backFields": [
+      {
+        "key": "digital-card",
+        "label": "Digital Card",
+        "value": "https://innarbo.github.io/zigzagup-card/",
+        "attributedValue": "<a href=\"https://innarbo.github.io/zigzagup-card/\">Open digital card</a>"
+      },
+      {
+        "key": "linkedin",
+        "label": "LinkedIn",
+        "value": "https://innarbo.github.io/zigzagup-card/linkedin/",
+        "attributedValue": "<a href=\"https://innarbo.github.io/zigzagup-card/linkedin/\">Open LinkedIn</a>"
+      },
+      {
+        "key": "one-pager",
+        "label": "One-Pager",
+        "value": "https://innarbo.github.io/zigzagup-card/one-pager/",
+        "attributedValue": "<a href=\"https://innarbo.github.io/zigzagup-card/one-pager/\">Open one-pager</a>"
+      },
+      {
+        "key": "email",
+        "label": "Email",
+        "value": "zigzagup.app@gmail.com",
+        "attributedValue": "<a href=\"mailto:zigzagup.app@gmail.com\">zigzagup.app@gmail.com</a>"
+      }
+    ]
+  },
+  "barcodes": [
+    {
+      "format": "PKBarcodeFormatQR",
+      "message": "https://innarbo.github.io/zigzagup-card/",
+      "messageEncoding": "iso-8859-1",
+      "altText": "innarbo.github.io/zigzagup-card"
+    }
+  ]
+}
