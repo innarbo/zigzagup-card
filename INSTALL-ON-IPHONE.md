@@ -1,15 +1,24 @@
-# Install the ZigZagUp Card on iPhone
+# Install the ZigZagUp Card on iPhone — Version 13
 
-1. Open Safari on the iPhone.
-2. Visit: https://innarbo.github.io/zigzagup-card/
-3. Tap the Share button (square with the upward arrow).
-4. Tap **Add to Home Screen**.
-5. Turn on **Open as Web App**.
-6. Use the name **ZigZagUp** or **Inna Arbo**, then tap **Add**.
+Version 13 uses an owner-specific Home Screen launch mode:
 
-The cyan U-with-triangle icon will appear on the Home Screen. Opening it launches
-the card in standalone app mode without the normal Safari address and toolbar.
+- Tapping the Home Screen icon opens the dark QR card first.
+- People who scan the public QR code open the white contact/action page.
+- Tap **View Contact Card** on the dark screen to open the white page.
+- On the white page, **Scan to Connect** returns to the dark QR screen.
 
-The card remains hosted at the same permanent GitHub Pages address. Updating
-the GitHub repository updates the Home Screen web app; the icon does not need
-to be re-added for ordinary design or content changes.
+## Replace the old Home Screen icon
+
+The iPhone stores the icon that existed when the web app was installed. To receive
+the larger U icon and the corrected launch behavior:
+
+1. Upload Version 13 to the existing GitHub repository and wait for GitHub Pages to update.
+2. Touch and hold the old ZigZagUp Home Screen icon.
+3. Tap **Remove App**, then remove/delete the web app from the Home Screen.
+4. In Safari, open this owner-install URL exactly:
+   https://innarbo.github.io/zigzagup-card/?source=home-screen
+5. Tap Share, then **Add to Home Screen**.
+6. Keep **Open as Web App** turned on, use the name **ZigZagUp**, and tap **Add**.
+
+The public card URL and QR code remain unchanged:
+https://innarbo.github.io/zigzagup-card/

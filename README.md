@@ -80,3 +80,14 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 11: fixed the supporting-text CSS so it is actually rendered as two centered lines: “Understand how you think.” / “Build how you reason.” The approved two-line headline and cyan highlights remain unchanged.
 
 - Version 12: Home Screen web-app edition. Added standalone-app metadata, polished ZigZagUp launch screens for major iPhone sizes, app-mode refinements, updated manifest shortcuts, and an iPhone installation guide without changing the visible business-card design.
+
+## Version 13 — Home Screen owner mode
+
+- Home Screen launches now open the dark QR presentation card first.
+- Direct public/QR visits continue to open the white contact card for recipients.
+- Added a **View Contact Card** button and owner-mode view switching.
+- Enlarged the cyan U-with-triangle Home Screen icon substantially.
+- Changed LinkedIn and One-Pager buttons to open their external destinations directly.
+- Added return/resume handling so the app does not remain on a blank external/intermediate page.
+- Replaced startup screens with a dark branded launch treatment.
+- Existing Home Screen installations must be removed and added again to receive the new icon.

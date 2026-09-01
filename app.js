@@ -1,11 +1,4 @@
-// Version 12 Home Screen web-app enhancement.
-(() => {
-  const standalone =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
-  document.documentElement.classList.toggle('is-standalone', standalone);
-})();
-
+// Version 13 Home Screen owner-mode and external-link fix.
 // Version 11 supporting-text CSS fix.
 // Version 10 supporting text line-break refinement.
 // Version 9 headline line-break refinement.
@@ -20,6 +13,8 @@
   const modal = document.getElementById('qrModal');
   const modalCard = modal?.querySelector('.modal-card');
   const openButtons = document.querySelectorAll('[data-open-qr]');
+  const profileButtons = document.querySelectorAll('[data-show-profile]');
+  const externalLinks = document.querySelectorAll('[data-external-link]');
   const closeButtons = document.querySelectorAll('[data-close-qr]');
   const shareButton = document.getElementById('shareButton');
   const copyLinkButton = document.getElementById('copyLinkButton');
@@ -27,6 +22,30 @@
   const toast = document.getElementById('toast');
   let previousFocus = null;
   let toastTimer = null;
+
+  const params = new URLSearchParams(location.search);
+  const isStandalone =
+    window.matchMedia?.('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+  const isOwnerMode =
+    isStandalone ||
+    params.get('source') === 'home-screen' ||
+    params.get('owner') === '1';
+  const isMobileCard = () => window.matchMedia('(max-width: 860px)').matches;
+
+  function setAppView(view) {
+    if (!isOwnerMode || !isMobileCard()) return;
+    const nextView = view === 'profile' ? 'profile' : 'qr';
+    document.documentElement.classList.toggle('app-view-profile', nextView === 'profile');
+    document.documentElement.classList.toggle('app-view-qr', nextView === 'qr');
+    document.body.dataset.appView = nextView;
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }
+
+  if (isOwnerMode) {
+    document.documentElement.classList.add('is-standalone', 'is-owner-mode');
+    setAppView(params.get('view') === 'profile' ? 'profile' : 'qr');
+  }
 
   function showToast(message) {
     if (!toast) return;
@@ -55,7 +74,19 @@
     if (previousFocus instanceof HTMLElement) previousFocus.focus();
   }
 
-  openButtons.forEach(button => button.addEventListener('click', openQr));
+  openButtons.forEach(button => button.addEventListener('click', () => {
+    if (isOwnerMode && isMobileCard()) {
+      setAppView('qr');
+      return;
+    }
+    openQr();
+  }));
+  profileButtons.forEach(button => button.addEventListener('click', () => setAppView('profile')));
+
+  // Leave the owner app on its QR screen while LinkedIn, Drive, or Mail opens externally.
+  externalLinks.forEach(link => link.addEventListener('click', () => {
+    if (isOwnerMode && isMobileCard()) setAppView('qr');
+  }));
   closeButtons.forEach(button => button.addEventListener('click', () => closeQr()));
 
   document.addEventListener('keydown', event => {
@@ -106,12 +137,31 @@
       .catch(() => { /* Keep hidden when no signed pass is present. */ });
   }
 
-  if (location.hash === '#qr' || new URLSearchParams(location.search).get('qr') === '1') {
-    openQr();
+  if (location.hash === '#qr' || params.get('qr') === '1') {
+    if (isOwnerMode && isMobileCard()) setAppView('qr');
+    else openQr();
   }
 
   window.addEventListener('hashchange', () => {
     if (location.hash !== '#qr') closeQr(false);
+  });
+
+  // iOS can resume a Home Screen web app where it was left. Return the owner's app
+  // to the dark QR screen whenever it comes back from another app or the Home Screen.
+  let wasHidden = false;
+  document.addEventListener('visibilitychange', () => {
+    if (!isOwnerMode || !isMobileCard()) return;
+    if (document.hidden) {
+      wasHidden = true;
+      return;
+    }
+    if (wasHidden) {
+      setAppView('qr');
+      wasHidden = false;
+    }
+  });
+  window.addEventListener('pageshow', () => {
+    if (isOwnerMode && isMobileCard()) setAppView('qr');
   });
 
   // Version 4 cache fix: this card is small and does not need an offline service worker.

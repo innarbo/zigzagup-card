@@ -500,3 +500,145 @@ html.is-standalone,
 html.is-standalone body {
   overscroll-behavior-y: none;
 }
+
+
+/* Version 13: owner Home Screen mode opens on the dark QR card first. */
+.owner-profile-action {
+  display: none;
+  min-height: 50px;
+  margin: 18px auto 0;
+  padding: 0 18px 0 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, .075);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+  cursor: pointer;
+  font-weight: 620;
+  letter-spacing: -.012em;
+}
+.owner-profile-action:hover { background: rgba(255, 255, 255, .12); }
+.owner-profile-action:focus-visible {
+  outline: 3px solid rgba(0, 216, 235, .42);
+  outline-offset: 3px;
+}
+.owner-profile-action svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 860px) {
+  html.is-owner-mode,
+  html.is-owner-mode body {
+    background: #041f43;
+  }
+
+  html.is-owner-mode .page-shell {
+    width: 100%;
+    min-height: 100svh;
+    padding: 0;
+    display: block;
+  }
+
+  html.is-owner-mode .qr-panel {
+    display: flex;
+    min-height: 100svh;
+    width: 100%;
+    padding: calc(env(safe-area-inset-top) + 28px) 24px calc(env(safe-area-inset-bottom) + 20px);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-y: auto;
+  }
+
+  html.is-owner-mode .logo--dark {
+    width: min(100%, 305px);
+    margin: 0 auto 22px;
+  }
+
+  html.is-owner-mode .qr-identity h2 {
+    font-size: clamp(2.15rem, 10vw, 2.65rem);
+  }
+
+  html.is-owner-mode .qr-identity p {
+    margin-top: 8px;
+    font-size: 1.02rem;
+  }
+
+  html.is-owner-mode .qr-frame {
+    width: min(68vw, 258px);
+    margin-top: 27px;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  html.is-owner-mode .scan-label {
+    margin-top: 19px;
+    font-size: 1rem;
+  }
+
+  html.is-owner-mode .permanent-url {
+    margin-top: 9px;
+    font-size: .73rem;
+  }
+
+  html.is-owner-mode .owner-profile-action {
+    display: flex;
+  }
+
+  html.is-owner-mode .profile-panel {
+    display: none;
+  }
+
+  html.is-owner-mode.app-view-profile,
+  html.is-owner-mode.app-view-profile body {
+    background: #ffffff;
+  }
+
+  html.is-owner-mode.app-view-profile .qr-panel {
+    display: none;
+  }
+
+  html.is-owner-mode.app-view-profile .profile-panel {
+    display: flex;
+  }
+
+  html.is-owner-mode.app-view-qr .qr-panel {
+    display: flex;
+  }
+
+  html.is-owner-mode.app-view-qr .profile-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  html.is-owner-mode .qr-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  html.is-owner-mode .logo--dark { width: min(100%, 286px); }
+  html.is-owner-mode .qr-frame { width: min(70vw, 248px); }
+}
+
+@media (max-height: 740px) and (max-width: 860px) {
+  html.is-owner-mode .qr-panel {
+    padding-top: calc(env(safe-area-inset-top) + 18px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 14px);
+  }
+  html.is-owner-mode .logo--dark { width: min(100%, 255px); margin-bottom: 13px; }
+  html.is-owner-mode .qr-identity h2 { font-size: 2rem; }
+  html.is-owner-mode .qr-identity p { margin-top: 5px; font-size: .94rem; }
+  html.is-owner-mode .qr-frame { width: min(57vw, 212px); margin-top: 17px; padding: 11px; }
+  html.is-owner-mode .scan-label { margin-top: 13px; font-size: .93rem; }
+  html.is-owner-mode .permanent-url { margin-top: 6px; }
+  html.is-owner-mode .owner-profile-action { min-height: 44px; margin-top: 11px; }
+}
