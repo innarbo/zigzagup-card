@@ -215,7 +215,8 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 .headline {
-  max-width: 10.5ch;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
   color: #07182f;
   font-size: clamp(1.8rem, 3.8vw, 2.28rem);
@@ -223,7 +224,10 @@ img { display: block; max-width: 100%; }
   letter-spacing: -.04em;
   font-weight: 675;
 }
-.headline-line { display: block; }
+.headline-line {
+  display: block;
+  white-space: nowrap;
+}
 .headline-highlight {
   color: #00c8e4;
   font-weight: 700;

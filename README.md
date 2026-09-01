@@ -70,3 +70,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 6: updated the headline to a clean two-line structure and highlighted **judgment** and **answers** in cyan for stronger brand emphasis.
 
 - Version 7: kept “Understand how you think. Build how you reason.” on a single line, including on mobile layouts.
+
+- Version 8: locks the headline to exactly two lines on mobile and desktop; the period after **answers.** is now cyan with the highlighted word.
