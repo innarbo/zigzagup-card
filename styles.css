@@ -219,7 +219,7 @@ img { display: block; max-width: 100%; }
   max-width: none;
   margin: 0 auto;
   color: #07182f;
-  font-size: clamp(1.8rem, 3.8vw, 2.28rem);
+  font-size: clamp(1.74rem, 3.65vw, 2.22rem);
   line-height: 1.16;
   letter-spacing: -.04em;
   font-weight: 675;

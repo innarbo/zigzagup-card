@@ -72,3 +72,7 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 7: kept “Understand how you think. Build how you reason.” on a single line, including on mobile layouts.
 
 - Version 8: locks the headline to exactly two lines on mobile and desktop; the period after **answers.** is now cyan with the highlighted word.
+
+- Version 9: adjusted the headline line break to match the approved two-line layout: “Build judgment in” / “the age of answers.” while preserving the cyan highlights.
+
+- Version 10: changed the supporting sentence to a centered two-line layout: “Understand how you think.” / “Build how you reason.” while preserving the approved headline layout.

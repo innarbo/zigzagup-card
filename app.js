@@ -1,3 +1,5 @@
+// Version 10 supporting text line-break refinement.
+// Version 9 headline line-break refinement.
 // Version 8 headline line-lock refresh.
 // Version 7 supporting line refresh.
 // Version 6 headline highlight refresh.
