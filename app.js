@@ -1,3 +1,4 @@
+// Version 5 layout refresh.
 (() => {
   'use strict';
 

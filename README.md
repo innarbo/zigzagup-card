@@ -64,3 +64,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 3: updated the QR-side background to a smoother navy-blue gradient with subtle geometric zigzag patterning and no stars.
 
 - Version 4: fixed stale-browser behavior by removing the old service-worker cache and forcing previously cached versions to clear.
+
+- Version 5: restructured the top of the light profile panel with a smaller logo, smaller name, clearer separators, and improved visual hierarchy for a more premium look.

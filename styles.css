@@ -126,9 +126,9 @@ img { display: block; max-width: 100%; }
   margin: 4px auto 32px;
 }
 .logo--light {
-  width: min(100%, 255px);
+  width: min(100%, 214px);
   height: auto;
-  margin: 0 auto 31px;
+  margin: 0 auto;
 }
 
 .qr-identity { text-align: center; }
@@ -178,44 +178,64 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
 }
-.profile-header { text-align: center; }
+.profile-header {
+  text-align: center;
+}
+.brand-lockup {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+.brand-separator {
+  width: 74px;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(4, 19, 38, 0), rgba(4, 19, 38, .12) 22%, rgba(0, 216, 235, .55) 50%, rgba(4, 19, 38, .12) 78%, rgba(4, 19, 38, 0));
+}
+.identity-block {
+  margin-top: 24px;
+}
 .profile-header h1 {
   margin: 0;
-  font-size: clamp(2.55rem, 5vw, 3.35rem);
-  line-height: 1.02;
-  letter-spacing: -.055em;
-  font-weight: 680;
+  font-size: clamp(2.2rem, 4vw, 2.85rem);
+  line-height: 1.04;
+  letter-spacing: -.05em;
+  font-weight: 670;
 }
 .role {
-  margin: 10px 0 0;
+  margin: 11px 0 0;
   color: #69717d;
-  font-size: 1.18rem;
-  letter-spacing: -.018em;
+  font-size: 1.02rem;
+  letter-spacing: -.012em;
 }
 .positioning {
-  margin: 38px 0 30px;
+  margin: 34px 0 30px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(4, 19, 38, .08);
   text-align: center;
 }
 .headline {
-  margin: 0;
+  max-width: 10.5ch;
+  margin: 0 auto;
   color: #07182f;
-  font-size: clamp(2rem, 4vw, 2.55rem);
-  line-height: 1.15;
-  letter-spacing: -.048em;
-  font-weight: 690;
+  font-size: clamp(1.8rem, 3.8vw, 2.28rem);
+  line-height: 1.16;
+  letter-spacing: -.04em;
+  font-weight: 675;
 }
 .accent-rule {
-  width: 48px;
-  height: 2px;
-  margin: 29px auto 26px;
+  width: 56px;
+  height: 3px;
+  margin: 0 auto 22px;
   border-radius: 999px;
   background: linear-gradient(90deg, #00c8e4, #00e8f7);
 }
 .supporting {
-  margin: 0;
+  max-width: 370px;
+  margin: 18px auto 0;
   color: #626b79;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: .98rem;
+  line-height: 1.56;
   letter-spacing: -.012em;
 }
 .actions { display: grid; gap: 14px; }
@@ -404,12 +424,12 @@ body.modal-open { overflow: hidden; }
     border-radius: 0;
     box-shadow: none;
   }
-  .logo--light { width: min(100%, 235px); margin-bottom: 31px; }
-  .profile-header h1 { font-size: clamp(2.6rem, 12vw, 3.35rem); }
-  .role { font-size: 1.08rem; }
-  .positioning { margin: 38px 0 29px; }
-  .headline { font-size: clamp(1.92rem, 8.4vw, 2.45rem); }
-  .supporting { font-size: .96rem; }
+  .logo--light { width: min(100%, 196px); }
+  .profile-header h1 { font-size: clamp(2.35rem, 10vw, 2.9rem); }
+  .role { font-size: .98rem; }
+  .positioning { margin: 30px 0 26px; padding-top: 23px; }
+  .headline { font-size: clamp(1.72rem, 7.8vw, 2.18rem); }
+  .supporting { max-width: 300px; font-size: .94rem; }
   .actions { width: min(100%, 430px); margin: 0 auto; gap: 13px; }
   .action { min-height: 62px; }
   .secondary-actions { width: min(100%, 430px); margin-left: auto; margin-right: auto; }
@@ -418,8 +438,8 @@ body.modal-open { overflow: hidden; }
 
 @media (max-width: 390px) {
   .profile-panel { padding-left: 19px; padding-right: 19px; }
-  .logo--light { width: 216px; margin-bottom: 26px; }
-  .positioning { margin-top: 31px; }
+  .logo--light { width: 188px; }
+  .positioning { margin-top: 26px; padding-top: 21px; }
   .accent-rule { margin-top: 24px; margin-bottom: 22px; }
   .action { min-height: 58px; }
   .secondary-actions { grid-template-columns: 1fr; }
@@ -427,10 +447,10 @@ body.modal-open { overflow: hidden; }
 
 @media (max-height: 740px) and (max-width: 860px) {
   .profile-panel { padding-top: calc(env(safe-area-inset-top) + 21px); }
-  .logo--light { width: 190px; margin-bottom: 18px; }
-  .profile-header h1 { font-size: 2.55rem; }
-  .positioning { margin: 24px 0 20px; }
-  .headline { font-size: 1.85rem; }
+  .logo--light { width: 170px; }
+  .profile-header h1 { font-size: 2.28rem; }
+  .positioning { margin: 22px 0 18px; padding-top: 18px; }
+  .headline { font-size: 1.72rem; }
   .accent-rule { margin: 17px auto; }
   .actions { gap: 9px; }
   .action { min-height: 51px; }
