@@ -78,3 +78,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 10: changed the supporting sentence to a centered two-line layout: “Understand how you think.” / “Build how you reason.” while preserving the approved headline layout.
 
 - Version 11: fixed the supporting-text CSS so it is actually rendered as two centered lines: “Understand how you think.” / “Build how you reason.” The approved two-line headline and cyan highlights remain unchanged.
+
+- Version 12: Home Screen web-app edition. Added standalone-app metadata, polished ZigZagUp launch screens for major iPhone sizes, app-mode refinements, updated manifest shortcuts, and an iPhone installation guide without changing the visible business-card design.

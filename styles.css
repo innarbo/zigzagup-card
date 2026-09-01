@@ -477,3 +477,26 @@ body.modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+
+/* Home Screen web-app refinements. These do not change the normal card design. */
+@media (display-mode: standalone) {
+  html,
+  body {
+    min-height: 100%;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .profile-panel {
+    min-height: 100svh;
+  }
+}
+
+html.is-standalone,
+html.is-standalone body {
+  overscroll-behavior-y: none;
+}

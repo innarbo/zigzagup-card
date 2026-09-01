@@ -1,18 +1,16 @@
 {
   "name": "Inna Arbo | ZigZagUp",
-  "short_name": "Inna Arbo",
-  "description": "Digital business card for Inna Arbo, Founder & CEO of ZigZagUp.",
-  "id": "./",
-  "start_url": "./",
-  "scope": "./",
+  "short_name": "ZigZagUp",
+  "description": "Inna Arbo's ZigZagUp digital business card.",
+  "id": "/zigzagup-card/",
+  "start_url": "/zigzagup-card/?source=home-screen",
+  "scope": "/zigzagup-card/",
   "display": "standalone",
   "display_override": [
-    "standalone",
-    "minimal-ui",
-    "browser"
+    "standalone"
   ],
   "background_color": "#ffffff",
-  "theme_color": "#041326",
+  "theme_color": "#ffffff",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -34,20 +32,33 @@
   ],
   "shortcuts": [
     {
-      "name": "Show QR",
+      "name": "Scan to Connect",
       "short_name": "QR",
-      "url": "./?qr=1",
+      "description": "Open the card QR code.",
+      "url": "/zigzagup-card/?qr=1",
       "icons": [
         {
           "src": "./assets/icons/icon-192.png",
-          "sizes": "192x192"
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
     {
       "name": "LinkedIn",
       "short_name": "LinkedIn",
-      "url": "./linkedin/"
+      "url": "/zigzagup-card/linkedin/"
+    },
+    {
+      "name": "One-Pager",
+      "short_name": "One-Pager",
+      "url": "/zigzagup-card/one-pager/"
     }
+  ],
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "productivity"
   ]
 }

@@ -1,3 +1,11 @@
+// Version 12 Home Screen web-app enhancement.
+(() => {
+  const standalone =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.navigator.standalone === true;
+  document.documentElement.classList.toggle('is-standalone', standalone);
+})();
+
 // Version 11 supporting-text CSS fix.
 // Version 10 supporting text line-break refinement.
 // Version 9 headline line-break refinement.
