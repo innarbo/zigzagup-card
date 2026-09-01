@@ -240,12 +240,17 @@ img { display: block; max-width: 100%; }
   background: linear-gradient(90deg, #00c8e4, #00e8f7);
 }
 .supporting {
-  max-width: none;
+  max-width: 370px;
   margin: 18px auto 0;
   color: #626b79;
   font-size: clamp(.84rem, 1.45vw, .98rem);
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -.015em;
+  text-align: center;
+  white-space: normal;
+}
+.supporting-line {
+  display: block;
   white-space: nowrap;
 }
 .actions { display: grid; gap: 14px; }
@@ -439,7 +444,8 @@ body.modal-open { overflow: hidden; }
   .role { font-size: .98rem; }
   .positioning { margin: 30px 0 26px; padding-top: 23px; }
   .headline { font-size: clamp(1.72rem, 7.8vw, 2.18rem); }
-  .supporting { max-width: none; font-size: clamp(.76rem, 3.4vw, .92rem); white-space: nowrap; }
+  .supporting { max-width: 310px; font-size: clamp(.82rem, 3.5vw, .94rem); white-space: normal; }
+  .supporting-line { display: block; white-space: nowrap; }
   .actions { width: min(100%, 430px); margin: 0 auto; gap: 13px; }
   .action { min-height: 62px; }
   .secondary-actions { width: min(100%, 430px); margin-left: auto; margin-right: auto; }

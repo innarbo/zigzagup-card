@@ -76,3 +76,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 9: adjusted the headline line break to match the approved two-line layout: “Build judgment in” / “the age of answers.” while preserving the cyan highlights.
 
 - Version 10: changed the supporting sentence to a centered two-line layout: “Understand how you think.” / “Build how you reason.” while preserving the approved headline layout.
+
+- Version 11: fixed the supporting-text CSS so it is actually rendered as two centered lines: “Understand how you think.” / “Build how you reason.” The approved two-line headline and cyan highlights remain unchanged.
