@@ -99,9 +99,20 @@
     if (location.hash !== '#qr') closeQr(false);
   });
 
-  if ('serviceWorker' in navigator && location.protocol === 'https:') {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js', { scope: './' }).catch(() => {});
+  // Version 4 cache fix: this card is small and does not need an offline service worker.
+  // Remove any older ZigZagUp service worker and stale caches so updates appear immediately.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map(registration => registration.unregister()));
+        if ('caches' in window) {
+          const keys = await caches.keys();
+          await Promise.all(keys.map(key => caches.delete(key)));
+        }
+      } catch (_) {
+        // The page remains fully functional if cleanup is unavailable.
+      }
     });
   }
 })();
