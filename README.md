@@ -66,3 +66,7 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Version 4: fixed stale-browser behavior by removing the old service-worker cache and forcing previously cached versions to clear.
 
 - Version 5: restructured the top of the light profile panel with a smaller logo, smaller name, clearer separators, and improved visual hierarchy for a more premium look.
+
+- Version 6: updated the headline to a clean two-line structure and highlighted **judgment** and **answers** in cyan for stronger brand emphasis.
+
+- Version 7: kept “Understand how you think. Build how you reason.” on a single line, including on mobile layouts.
