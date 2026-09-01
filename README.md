@@ -93,3 +93,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Existing Home Screen installations must be removed and added again to receive the new icon.
 
 - Version 14: slightly reduced the Home Screen icon mark size to create cleaner top/bottom padding, and embedded a professional contact photo in `inna-arbo.vcf` so the image appears when the contact is saved.
+
+- Version 15: replaced the Google Drive preview with a mobile-responsive, locally hosted One-Pager and included a print-quality downloadable PDF. The vCard One-Pager link remains the permanent `/one-pager/` URL, so saved contacts always open the current version.

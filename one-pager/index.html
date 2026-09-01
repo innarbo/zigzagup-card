@@ -3,19 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="robots" content="noindex,nofollow">
-  <title>Opening One-Pager | Inna Arbo</title>
-  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-  <script>
-    (() => {
-      const ownerMode = navigator.standalone === true || matchMedia?.('(display-mode: standalone)').matches;
-      if (ownerMode) location.replace('../?source=home-screen');
-      else location.replace("https://drive.google.com/file/d/1pliJ7bCmSib27scnjvC_MaVXi2N2fPJU/view?usp=sharing");
-    })();
-  </script>
+  <meta name="theme-color" content="#041326">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="ZigZagUp: a diagnosis-first reasoning calibration and training platform for high-stakes learning.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://innarbo.github.io/zigzagup-card/one-pager/">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon-v14.png">
+  <title>ZigZagUp One-Pager | Building Judgment in the Age of Answers</title>
   <style>
-    *{box-sizing:border-box} body{min-height:100svh;margin:0;display:grid;place-items:center;padding:24px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;background:#041f43;text-align:center} main{width:min(100%,420px)} img{width:230px;max-width:100%;margin:0 auto 28px} p{color:rgba(255,255,255,.72)} a{color:#00d8eb;font-weight:650}
+    :root {
+      --navy-0:#020915; --navy-1:#031226; --navy-2:#052044;
+      --cyan:#00d8eb; --cyan-2:#19ecf4; --ink:#f7fbff;
+      --soft:#c8d4e4; --muted:#93a7bd;
+      font-synthesis:none; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
+    }
+    *{box-sizing:border-box}
+    html{background:var(--navy-0)}
+    body{min-height:100svh;margin:0;color:var(--ink);background:radial-gradient(circle at 84% 3%,rgba(0,216,235,.11),transparent 30rem),radial-gradient(circle at 5% 94%,rgba(13,73,129,.22),transparent 32rem),linear-gradient(155deg,var(--navy-0),var(--navy-1) 42%,#020c1d 100%);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif}
+    a{color:inherit} img{display:block;max-width:100%}
+    .toolbar{position:sticky;z-index:20;top:0;display:flex;justify-content:space-between;gap:12px;width:min(1180px,calc(100% - 28px));margin:0 auto;padding:calc(env(safe-area-inset-top) + 12px) 0 10px;background:linear-gradient(to bottom,rgba(2,9,21,.97) 65%,rgba(2,9,21,0))}
+    .toolbar a{min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 15px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:#eaf3ff;background:rgba(255,255,255,.06);backdrop-filter:blur(14px);text-decoration:none;font-size:.86rem;font-weight:650}
+    .toolbar a:last-child{color:#02101f;border-color:transparent;background:linear-gradient(135deg,var(--cyan),var(--cyan-2))}
+    .sheet{position:relative;isolation:isolate;overflow:hidden;width:min(1180px,calc(100% - 28px));margin:6px auto 34px;padding:clamp(28px,4.8vw,62px);border:1px solid rgba(255,255,255,.09);border-radius:32px;background:linear-gradient(135deg,rgba(255,255,255,.035),transparent 33%),rgba(2,12,28,.68);box-shadow:0 36px 100px rgba(0,0,0,.34)}
+    .sheet:before,.sheet:after{content:"";position:absolute;z-index:-1;pointer-events:none}
+    .sheet:before{inset:0;opacity:.15;background-image:linear-gradient(135deg,transparent 0 24%,rgba(0,216,235,.17) 24% 24.25%,transparent 24.25% 50%,rgba(255,255,255,.08) 50% 50.2%,transparent 50.2% 100%),linear-gradient(45deg,transparent 0 35%,rgba(0,216,235,.12) 35% 35.2%,transparent 35.2% 100%);background-size:360px 360px,260px 260px;background-position:90% -70px,-80px 86%}
+    .sheet:after{right:-170px;top:-220px;width:560px;height:560px;border-radius:50%;background:rgba(0,216,235,.11);filter:blur(90px)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(260px,.82fr);gap:clamp(26px,5vw,68px);align-items:center}
+    .brand{width:min(100%,300px);margin-bottom:29px}
+    .eyebrow{margin:0 0 10px;color:var(--cyan);font-size:clamp(.74rem,1vw,.88rem);line-height:1;letter-spacing:.24em;text-transform:uppercase;font-weight:760}
+    h1{max-width:780px;margin:0;font-size:clamp(2.65rem,6.6vw,5.55rem);line-height:.98;letter-spacing:-.065em;font-weight:760} h1 span{color:var(--cyan)}
+    .hero-copy{max-width:700px;margin:21px 0 0;color:var(--soft);font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.55;letter-spacing:-.012em}
+    .peak{position:relative;min-height:290px;display:grid;place-items:center}.peak svg{width:min(100%,440px);height:auto;overflow:visible;filter:drop-shadow(0 18px 38px rgba(0,216,235,.16))}
+    .proposition{margin:clamp(30px,4.5vw,50px) 0 22px;padding:15px 19px;text-align:center;border:1px solid rgba(0,216,235,.5);border-radius:14px;color:#d9f9fc;background:linear-gradient(90deg,rgba(0,216,235,.06),rgba(0,216,235,.12),rgba(0,216,235,.06));font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.38;letter-spacing:-.012em}
+    .story-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .story-card{position:relative;min-height:164px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:17px;padding:22px 22px 21px;border:1px solid rgba(0,216,235,.22);border-radius:22px;background:linear-gradient(145deg,rgba(9,41,76,.62),rgba(3,19,39,.74))}
+    .card-number{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(0,216,235,.52);border-radius:14px;color:var(--cyan);background:rgba(0,216,235,.055);font-size:.92rem;font-weight:760;font-variant-numeric:tabular-nums}
+    .story-card h2,.feature h2{margin:1px 0 8px;color:var(--cyan-2);font-size:clamp(1.05rem,1.6vw,1.25rem);line-height:1.16;letter-spacing:-.025em;font-weight:680}
+    .story-card p,.feature p{margin:0;color:var(--soft);font-size:clamp(.89rem,1.25vw,1rem);line-height:1.48;letter-spacing:-.01em}
+    .feature-row{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);gap:14px;margin-top:14px}
+    .feature{min-height:174px;padding:23px 24px;border:1px solid rgba(0,216,235,.28);border-radius:22px;background:linear-gradient(135deg,rgba(7,42,81,.76),rgba(3,18,37,.8))}
+    .feature-head{display:flex;align-items:center;gap:13px;margin-bottom:15px}.feature-badge{min-width:48px;height:40px;display:inline-grid;place-items:center;padding:0 11px;border:1px solid rgba(0,216,235,.52);border-radius:12px;color:var(--cyan);background:rgba(0,216,235,.055);font-size:.88rem;font-weight:800;letter-spacing:.03em}.feature-head h2{margin:0}
+    .ikc-flow{display:grid;grid-template-columns:repeat(7,auto);gap:8px;align-items:center;justify-content:start;margin:0 0 13px}.ikc-step{padding:8px 10px;border:1px solid rgba(0,216,235,.44);border-radius:9px;color:#e8f7fb;background:rgba(1,12,27,.55);font-size:clamp(.72rem,1vw,.84rem);line-height:1.1;white-space:nowrap}.arrow{color:var(--cyan);font-size:1rem}
+    .proof-title{margin:0 0 6px;color:#fff;font-size:clamp(1rem,1.5vw,1.15rem);font-weight:680}
+    .footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:24px;padding-top:19px;border-top:1px solid rgba(255,255,255,.09)}.footer-message{color:var(--cyan-2);font-size:clamp(.76rem,1.1vw,.92rem);letter-spacing:.18em;text-transform:uppercase;font-weight:720}.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px 18px;color:var(--muted);font-size:.76rem}.footer-links a{color:inherit;text-decoration:none}
+    @media(max-width:780px){.toolbar{width:min(100% - 22px,620px)}.toolbar a{min-height:40px;padding:0 13px;font-size:.8rem}.sheet{width:100%;margin:0;padding:24px 19px calc(env(safe-area-inset-bottom) + 28px);border:0;border-radius:0;box-shadow:none}.hero{display:block}.brand{width:218px;margin-bottom:26px}h1{max-width:10ch;font-size:clamp(2.62rem,12.7vw,4.1rem)}.hero-copy{max-width:33rem;font-size:1.02rem}.peak{min-height:220px;margin-top:8px}.peak svg{width:min(100%,330px)}.proposition{margin-top:17px;padding:14px 15px;font-size:.98rem}.story-grid,.feature-row{grid-template-columns:1fr}.story-card{min-height:0;grid-template-columns:43px minmax(0,1fr);gap:14px;padding:19px 18px}.card-number{width:40px;height:40px}.story-card h2,.feature h2{font-size:1.16rem}.story-card p,.feature p{font-size:.95rem}.feature{min-height:0;padding:21px 19px}.ikc-flow{grid-template-columns:1fr;justify-content:stretch}.ikc-step{text-align:center;white-space:normal}.arrow{justify-self:center;transform:rotate(90deg);line-height:1}.footer{align-items:flex-start;flex-direction:column}.footer-links{justify-content:flex-start}}
+    @media(max-width:390px){.toolbar a span.optional{display:none}.story-card{grid-template-columns:38px minmax(0,1fr);gap:12px}.card-number{width:36px;height:36px;border-radius:11px}.ikc-flow{gap:6px}.ikc-step{padding:7px 6px;font-size:.7rem}}
+    @media print{
+      @page{size:Letter;margin:0}
+      html,body{width:8.5in;height:11in;background:#020915!important;-webkit-print-color-adjust:exact}
+      .toolbar{display:none!important}
+      .sheet{width:8.5in;height:11in;margin:0;padding:.42in .43in .34in;border:0;border-radius:0;box-shadow:none;background:linear-gradient(135deg,rgba(255,255,255,.035),transparent 33%),#020c1c}
+      .hero{grid-template-columns:1.2fr .8fr;gap:.30in;min-height:2.56in}.brand{width:2.55in;margin-bottom:.22in}.eyebrow{margin-bottom:.08in;font-size:8pt}h1{font-size:39pt;line-height:.96}.hero-copy{margin-top:.14in;font-size:10pt;line-height:1.42}.peak{min-height:2.28in}.peak svg{width:2.85in}
+      .proposition{margin:.20in 0 .14in;padding:.11in .14in;border-radius:10px;font-size:10pt}
+      .story-grid{gap:.09in}.story-card{min-height:1.48in;grid-template-columns:.36in 1fr;gap:.11in;padding:.17in .17in;border-radius:13px}.card-number{width:.33in;height:.33in;border-radius:8px;font-size:8pt}.story-card h2,.feature h2{margin:0 0 .055in;font-size:11pt}.story-card p,.feature p{font-size:8.45pt;line-height:1.39}
+      .feature-row{gap:.09in;margin-top:.09in}.feature{min-height:1.68in;padding:.17in .18in;border-radius:13px}.feature-head{gap:.09in;margin-bottom:.09in}.feature-badge{min-width:.41in;height:.31in;padding:0 .07in;border-radius:7px;font-size:7.8pt}.ikc-flow{gap:.055in;margin-bottom:.085in}.ikc-step{padding:.055in .065in;border-radius:6px;font-size:6.75pt}.arrow{font-size:7.7pt}.proof-title{margin-bottom:.04in;font-size:9.3pt}
+      .footer{margin-top:.16in;padding-top:.13in}.footer-message{font-size:7.5pt}.footer-links{gap:.05in .12in;font-size:6.9pt}
+    }
   </style>
 </head>
-<body><main><img src="../assets/brand/zigzagup-wordmark-dark.png" alt="ZigZagUp"><p>Opening One-Pager…</p><a href="https://drive.google.com/file/d/1pliJ7bCmSib27scnjvC_MaVXi2N2fPJU/view?usp=sharing" rel="noopener noreferrer">Continue</a></main></body>
+<body>
+  <nav class="toolbar" aria-label="One-pager actions">
+    <a href="../" aria-label="Return to Inna Arbo's digital business card"><span aria-hidden="true">←</span><span>Digital Card</span></a>
+    <a href="./ZigZagUp-One-Pager.pdf" download><span>Download <span class="optional">PDF</span></span><span aria-hidden="true">↓</span></a>
+  </nav>
+  <main class="sheet">
+    <section class="hero">
+      <div>
+        <img class="brand" src="../assets/brand/zigzagup-logo-tagline-dark.png" alt="ZigZagUp - Reasoning Calibration and Training">
+        <p class="eyebrow">Beyond IQ</p>
+        <h1>Building <span>judgment</span> in the age of <span>answers</span>.</h1>
+        <p class="hero-copy">AI can accelerate access to answers. ZigZagUp develops the human capacity to evaluate them - by making reasoning visible, diagnosable, repairable, and transferable.</p>
+      </div>
+      <div class="peak" aria-hidden="true">
+        <svg viewBox="0 0 520 390">
+          <defs><linearGradient id="peak-fill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#0a4b84" stop-opacity=".9"/><stop offset=".52" stop-color="#052044" stop-opacity=".82"/><stop offset="1" stop-color="#020b18" stop-opacity=".95"/></linearGradient><linearGradient id="zig" x1="0" x2="1"><stop offset="0" stop-color="#00d8eb"/><stop offset="1" stop-color="#69f6ff"/></linearGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <path d="M22 319 147 198 220 256 330 78 497 319Z" fill="url(#peak-fill)" stroke="#2c739f" stroke-width="2"/><path d="m47 319 100-97 72 56 111-198 142 239" fill="none" stroke="#78dbe6" stroke-opacity=".45" stroke-width="2"/><path d="M332 105 284 165 342 183 288 224 356 244 296 292" fill="none" stroke="url(#zig)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/><path d="M44 337h426" stroke="#00d8eb" stroke-opacity=".34" stroke-width="2"/><g fill="#00d8eb"><circle cx="95" cy="103" r="3"/><circle cx="143" cy="76" r="2.5"/><circle cx="182" cy="122" r="2.5"/><circle cx="408" cy="54" r="3"/><circle cx="454" cy="96" r="2.5"/></g><g stroke="#00d8eb" stroke-opacity=".25"><path d="M95 103 143 76l39 46"/><path d="m408 54 46 42-31 34"/><path d="m182 122 74-51"/></g>
+        </svg>
+      </div>
+    </section>
+    <p class="proposition">A diagnosis-first reasoning calibration and training platform for high-stakes learning.</p>
+    <section class="story-grid" aria-label="ZigZagUp product story">
+      <article class="story-card"><div class="card-number">01</div><div><h2>Why now</h2><p>AI can generate answers in seconds. The scarce skill is judgment: verifying reasoning, evidence, assumptions, and confidence before accepting an answer.</p></div></article>
+      <article class="story-card"><div class="card-number">02</div><div><h2>Human potential</h2><p>Human potential is not only what you know or how fast you think. It is how effectively you monitor, challenge, and redirect your own thinking.</p></div></article>
+      <article class="story-card"><div class="card-number">03</div><div><h2>What's missing</h2><p>Personalized learning still misses the why. Most systems adapt content or generate explanations. ZigZagUp diagnoses where thinking broke - and what repair is needed.</p></div></article>
+      <article class="story-card"><div class="card-number">04</div><div><h2>What ZigZagUp does</h2><p>Not another answer engine. A diagnostic repair loop: predict before choices, expose the reasoning path, repair the breakpoint, and test whether the repair transfers.</p></div></article>
+    </section>
+    <section class="feature-row">
+      <article class="feature"><div class="feature-head"><span class="feature-badge">IKC</span><h2>Reasoning scratchpad</h2></div><div class="ikc-flow" aria-label="Intuition to reasoned judgment"><span class="ikc-step">Intuition</span><span class="arrow">→</span><span class="ikc-step">Knowledge</span><span class="arrow">→</span><span class="ikc-step">Critical Thinking</span><span class="arrow">→</span><span class="ikc-step">Reasoned Judgment</span></div><p>ZigZagUp makes the transitions between these stages measurable and teachable.</p></article>
+      <article class="feature"><div class="feature-head"><span class="feature-badge">06</span><h2>First proving ground</h2></div><p class="proof-title">Digital SAT Reading &amp; Writing</p><p>Broader direction: real-world claim evaluation, AI explanations, financial reasoning, and high-stakes learning decisions.</p></article>
+    </section>
+    <footer class="footer"><div class="footer-message">Let's make judgment measurable.</div><div class="footer-links"><a href="https://innarbo.github.io/zigzagup-card/">innarbo.github.io/zigzagup-card</a><a href="mailto:zigzagup.app@gmail.com">zigzagup.app@gmail.com</a></div></footer>
+  </main>
+</body>
 </html>
