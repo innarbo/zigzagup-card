@@ -72,9 +72,8 @@ img { display: block; max-width: 100%; }
   padding: 55px 50px 42px;
   color: #f8f9fb;
   background:
-    radial-gradient(circle at 24% 14%, rgba(0, 232, 247, .16), transparent 24rem),
-    radial-gradient(circle at 86% 18%, rgba(0, 216, 235, .12), transparent 18rem),
-    linear-gradient(165deg, #0c2d52 0%, #062244 34%, #041a33 68%, #031224 100%);
+    radial-gradient(circle at 52% 24%, rgba(0, 232, 247, .06), transparent 17rem),
+    linear-gradient(180deg, #062b59 0%, #041f43 52%, #031a38 100%);
   border: 1px solid rgba(255, 255, 255, .08);
   display: flex;
   flex-direction: column;
@@ -86,24 +85,39 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  opacity: .2;
+  opacity: .18;
   background-image:
-    linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(to bottom, black, transparent 78%);
+    linear-gradient(135deg, transparent 0 18px, rgba(120, 203, 255, .12) 18px 19px, transparent 19px 100%),
+    linear-gradient(45deg, transparent 0 18px, rgba(120, 203, 255, .10) 18px 19px, transparent 19px 100%);
+  background-size: 140px 140px, 140px 140px;
+  background-position: -26px 20px, 44px 86px;
 }
 
 .brand-glow {
   position: absolute;
   z-index: -1;
-  top: -2%;
-  right: -18%;
-  width: 420px;
-  height: 420px;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 232, 247, .22) 0%, rgba(0, 216, 235, .12) 42%, rgba(0, 216, 235, 0) 72%);
-  filter: blur(48px);
+  background: radial-gradient(circle, rgba(0, 232, 247, .14) 0%, rgba(0, 216, 235, .08) 38%, rgba(0, 216, 235, 0) 72%);
+  filter: blur(38px);
+}
+
+.qr-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    linear-gradient(135deg, transparent 0 33%, rgba(0, 232, 247, .14) 33% 33.5%, transparent 33.5% 66%, rgba(0, 232, 247, .12) 66% 66.5%, transparent 66.5% 100%),
+    linear-gradient(225deg, transparent 0 33%, rgba(255,255,255,.07) 33% 33.5%, transparent 33.5% 66%, rgba(255,255,255,.06) 66% 66.5%, transparent 66.5% 100%);
+  background-size: 320px 320px, 320px 320px;
+  background-position: -100px 180px, 160px -70px;
 }
 
 .logo--dark {

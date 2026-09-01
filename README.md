@@ -60,3 +60,5 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 - Renamed the secondary QR action to **Scan to Connect**.
 - Adjusted the dark QR panel to a richer navy-blue gradient closer to the approved brand palette.
 - Updated the vCard display name to **Inna Arbo | ZigZagUp** to reduce accidental merging with a personal contact card on Apple devices.
+
+- Version 3: updated the QR-side background to a smoother navy-blue gradient with subtle geometric zigzag patterning and no stars.
