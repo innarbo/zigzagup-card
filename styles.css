@@ -72,7 +72,9 @@ img { display: block; max-width: 100%; }
   padding: 55px 50px 42px;
   color: #f8f9fb;
   background:
-    linear-gradient(155deg, rgba(10, 38, 69, .78), rgba(4, 19, 38, .94) 45%, #021020 100%);
+    radial-gradient(circle at 24% 14%, rgba(0, 232, 247, .16), transparent 24rem),
+    radial-gradient(circle at 86% 18%, rgba(0, 216, 235, .12), transparent 18rem),
+    linear-gradient(165deg, #0c2d52 0%, #062244 34%, #041a33 68%, #031224 100%);
   border: 1px solid rgba(255, 255, 255, .08);
   display: flex;
   flex-direction: column;
@@ -84,24 +86,24 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: -2;
-  opacity: .26;
+  opacity: .2;
   background-image:
-    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: linear-gradient(to bottom, black, transparent 75%);
+    linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
 }
 
 .brand-glow {
   position: absolute;
   z-index: -1;
-  top: 4%;
-  right: -28%;
-  width: 370px;
-  height: 370px;
+  top: -2%;
+  right: -18%;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  background: rgba(0, 216, 235, .16);
-  filter: blur(75px);
+  background: radial-gradient(circle, rgba(0, 232, 247, .22) 0%, rgba(0, 216, 235, .12) 42%, rgba(0, 216, 235, 0) 72%);
+  filter: blur(48px);
 }
 
 .logo--dark {
@@ -273,7 +275,7 @@ img { display: block; max-width: 100%; }
 }
 .secondary-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.35fr 1fr;
   gap: 12px;
   margin-top: 17px;
 }
@@ -406,6 +408,7 @@ body.modal-open { overflow: hidden; }
   .positioning { margin-top: 31px; }
   .accent-rule { margin-top: 24px; margin-bottom: 22px; }
   .action { min-height: 58px; }
+  .secondary-actions { grid-template-columns: 1fr; }
 }
 
 @media (max-height: 740px) and (max-width: 860px) {

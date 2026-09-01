@@ -53,3 +53,10 @@ Until a signed Wallet pass is added, the site is also installable from Safari wi
 ## Updating the card later
 
 Edit the constants in the HTML/vCard files and regenerate the QR if the permanent URL changes. Because the current permanent URL is already final, the QR code should not need to change when content is updated.
+
+
+## Version 2 updates
+
+- Renamed the secondary QR action to **Scan to Connect**.
+- Adjusted the dark QR panel to a richer navy-blue gradient closer to the approved brand palette.
+- Updated the vCard display name to **Inna Arbo | ZigZagUp** to reduce accidental merging with a personal contact card on Apple devices.
