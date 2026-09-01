@@ -20,7 +20,7 @@ This is a fully static package; there is no build step and no external JavaScrip
 - Title: Founder & CEO
 - Business email only: zigzagup.app@gmail.com
 - LinkedIn: `https://www.linkedin.com/in/inna-arbo-76a28a27`
-- One-Pager: `https://drive.google.com/file/d/1pliJ7bCmSib27scnjvC_MaVXi2N2fPJU/view?usp=sharing`
+- One-Pager: `https://innarbo.github.io/zigzagup-card/one-pager/`
 - No phone number or personal email is included.
 
 The vCard uses the shorter card-hosted routes `/linkedin/` and `/one-pager/`, which redirect to the full external links.
@@ -94,4 +94,10 @@ Edit the constants in the HTML/vCard files and regenerate the QR if the permanen
 
 - Version 14: slightly reduced the Home Screen icon mark size to create cleaner top/bottom padding, and embedded a professional contact photo in `inna-arbo.vcf` so the image appears when the contact is saved.
 
-- Version 15: replaced the Google Drive preview with a mobile-responsive, locally hosted One-Pager and included a print-quality downloadable PDF. The vCard One-Pager link remains the permanent `/one-pager/` URL, so saved contacts always open the current version.
+
+## Version 16 - original one-pager preserved
+
+- Built from Version 14; the redesigned Version 15 one-pager is not included.
+- Includes the user's original `ZigZagUp_OnePager.pdf` byte-for-byte, without redesign, reformatting, cropping, or content changes.
+- The card's One-Pager button opens the hosted original PDF directly.
+- The stable `/one-pager/` URL stored in the vCard redirects to the same original PDF.
